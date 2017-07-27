@@ -77,6 +77,7 @@
     {% endif %}
         <input type="number" name="page" value="{{ page - 1 }}" hidden>
     </form>
+	<a href="/torrents/?search=">Index</a>
     <form action="/torrents" method="get">
         <button {% if not next_page_exists %}disabled{% endif %}>Next</button>
         <input type="text" name="search" value="{{ search }}" hidden>
