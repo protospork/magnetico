@@ -141,3 +141,6 @@ table tr th:last-child {
 }
 
 
+.footer-button-disabled {
+	background-color: #ff0000;
+}
