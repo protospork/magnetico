@@ -71,33 +71,39 @@
     <div id="footer-back" {% if page == 0 %}class="footer-button-disabled"{% endif %}>
 	    <div id="button-back" class="footer-button">
 	    <!-- replace the form buttons with these when possible -->
+		    <a href="/torrents?search={{ search }}&sort_by={{ sorted_by }}&page={{ page - 1 }}">
+		        <img src="{{ url_for('static', filename='assets/prev.png') }}" alt="Previous" />
+		    </a>
 		</div>
-	    <form action="/torrents" method="get">
+	    <!--<form action="/torrents" method="get">
             <button {% if page == 0 %}disabled{% endif %}>Previous</button>
             <input type="text" name="search" value="{{ search }}" hidden>
         {% if sorted_by %}
             <input type="text" name="sort_by" value="{{ sorted_by }}" hidden>
         {% endif %}
             <input type="number" name="page" value="{{ page - 1 }}" hidden>
-        </form>
+        </form>-->
 	</div>
 	<div id="footer-index">
 	    <div id="button-index" class="footer-button">
-	        <a href="/torrents/?search=">Index</a>
+	        <a href="/torrents/?search="><img src="{{ url_for('static', filename='assets/home.png') }}" alt="Index" /></a>
 		</div>	
 	</div>
 	<div id="footer-next" {% if not next_page_exists %}class="footer-button-disabled"{% endif %}>
 		<div id="button-next" class="footer-button">
 	    <!-- replace the form buttons with these when possible -->
+		    <a href="/torrents?search={{ search }}&sort_by={{ sorted_by }}&page={{ page + 1 }}">
+		        <img src="{{ url_for('static', filename='assets/next.png') }}" alt="Next" />
+		    </a>
 		</div>
-        <form action="/torrents" method="get">
+        <!--<form action="/torrents" method="get">
             <button {% if not next_page_exists %}disabled{% endif %}>Next</button>
             <input type="text" name="search" value="{{ search }}" hidden>
         {% if sorted_by %}
             <input type="text" name="sort_by" value="{{ sorted_by }}" hidden>
         {% endif %}
             <input type="number" name="page" value="{{ page + 1 }}" hidden>
-        </form>
+        </form>-->
 	</div>
 </footer>
 </body>
